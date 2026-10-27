@@ -53,12 +53,9 @@ const ProjectsPage = () => {
 
   return (
     <div className="min-h-screen bg-brand-bg flex flex-col">
-      <LightSwitch />
-
-      {/* Header — left-aligned so it stays clear of the fixed theme toggle
-          (top-right). The back arrow + brand together link home. */}
+      {/* Header — the back arrow + brand together link home; theme toggle on the right. */}
       <header className="bg-brand-bg border-b border-brand-border">
-        <div className="page-shell page-shell-header py-5">
+        <div className="page-shell py-5 flex items-center justify-between gap-4">
           <Link
             to="/"
             aria-label="Back to home"
@@ -67,6 +64,7 @@ const ProjectsPage = () => {
             <ArrowLeft className="h-4 w-4 text-brand-accent transition-transform group-hover:-translate-x-0.5" />
             <BrandLockup />
           </Link>
+          <LightSwitch />
         </div>
       </header>
 

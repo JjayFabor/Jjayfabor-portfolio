@@ -1,9 +1,13 @@
 import { VscGithub, VscMail } from "react-icons/vsc";
-import { FaLinkedin } from "react-icons/fa";
-import { CircleHelp } from "lucide-react";
+import { FaLinkedin, FaInstagram } from "react-icons/fa";
+import { CircleHelp, Briefcase } from "lucide-react";
 import { Link } from "react-router-dom";
 import Monogram from "./Monogram";
 import { useContact } from "../context/ContactContext";
+import { activeProfiles } from "../data/profiles";
+
+const profileHref = (label) =>
+  activeProfiles.find((p) => p.label === label)?.href;
 
 const linkClass =
   "inline-flex items-center gap-2 h-11 px-4 rounded-md text-sm font-medium text-brand-accent hover:bg-brand-accent/10 hover:text-brand-accent-hover transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-surface";
@@ -24,6 +28,18 @@ const socialLinks = [
     icon: <FaLinkedin className="h-5 w-5" />,
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/jjayfabor/",
+    rel: "me noopener noreferrer",
+  },
+  {
+    icon: <Briefcase className="h-5 w-5" />,
+    label: "OnlineJobs.ph",
+    href: profileHref("OnlineJobs.ph"),
+    rel: "me noopener noreferrer",
+  },
+  {
+    icon: <FaInstagram className="h-5 w-5" />,
+    label: "Instagram",
+    href: profileHref("Instagram"),
     rel: "me noopener noreferrer",
   },
   {
@@ -53,7 +69,9 @@ const Footer = () => {
 
           <nav aria-label="Footer links">
             <ul className="flex flex-wrap items-center justify-center gap-2">
-              {socialLinks.map((link) => (
+              {socialLinks
+                .filter((link) => link.to || link.href || link.action)
+                .map((link) => (
                 <li key={link.label}>
                   {link.to ? (
                     <Link to={link.to} className={linkClass}>

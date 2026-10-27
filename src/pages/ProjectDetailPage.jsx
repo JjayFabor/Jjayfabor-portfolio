@@ -88,12 +88,11 @@ const sectionsFromBody = (body) => {
   return sections;
 };
 
-// Shared page shell: fixed theme toggle, home-linking header, footer.
+// Shared page shell: home-linking header with theme toggle, footer.
 const Shell = ({ children }) => (
   <div className="min-h-screen bg-brand-bg flex flex-col">
-    <LightSwitch />
     <header className="bg-brand-bg border-b border-brand-border">
-      <div className="page-shell page-shell-header py-5">
+      <div className="page-shell py-5 flex items-center justify-between gap-4">
         <Link
           to="/"
           aria-label="Back to home"
@@ -101,6 +100,7 @@ const Shell = ({ children }) => (
         >
           <BrandLockup />
         </Link>
+        <LightSwitch />
       </div>
     </header>
     <main className="page-shell py-8 md:py-10 flex-grow">
@@ -272,7 +272,7 @@ const ProjectDetailPage = () => {
       {showNav && (
         <nav
           aria-label="On this page"
-          className="page-shell-bleed page-shell-header sticky top-0 z-10 mt-8 py-3 bg-brand-bg/90 backdrop-blur border-b border-brand-border"
+          className="page-shell-bleed sticky top-0 z-10 mt-8 py-3 bg-brand-bg/90 backdrop-blur border-b border-brand-border"
         >
           <ul className="flex flex-wrap gap-2">
             {sections.map((s) => (

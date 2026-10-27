@@ -1,11 +1,10 @@
 import { useEffect } from "react";
-import Bio from "../components/Bio";
-import Projects from "../components/Projects";
-import TechStack from "../components/TechStack";
-import Experience from "../components/Experience";
+import Hero from "../components/home/Hero";
+import CaseStudy from "../components/home/CaseStudy";
+import SelectedWork from "../components/home/SelectedWork";
+import HomeExperience from "../components/home/HomeExperience";
+import ContactCta from "../components/home/ContactCta";
 import Footer from "../components/Footer";
-import About from "../components/About";
-import LightSwitch from "../components/LightSwitch";
 import { useContact } from "../context/ContactContext";
 
 const HomePage = () => {
@@ -14,31 +13,18 @@ const HomePage = () => {
   // Keep the tab title correct when navigating back to home within the SPA
   // (the prerendered <title> already covers first load and crawlers).
   useEffect(() => {
-    document.title = "Jjay Fabor — Software Engineer & AI Engineer";
+    document.title = "Jjay Fabor — Software Engineer, AI Engineering & Automation";
   }, []);
 
   return (
     <div className="min-h-screen bg-brand-bg">
-      <LightSwitch />
-      <Bio onOpenContact={openContact} />
-
-      <main className="page-shell py-8 md:py-10">
-        <div className="home-layout">
-          {/* Left rail: who I am + what I know */}
-          <div className="min-w-0 space-y-8">
-            <About />
-            <TechStack />
-          </div>
-
-          {/* Main column: track record */}
-          <div className="min-w-0 space-y-8">
-            <Experience />
-            <Projects />
-          </div>
-        </div>
-
+      <Hero onOpenContact={openContact} />
+      <main>
+        <CaseStudy />
+        <SelectedWork />
+        <HomeExperience />
+        <ContactCta onOpenContact={openContact} />
       </main>
-
       <Footer />
     </div>
   );

@@ -26,10 +26,8 @@ const AiJourneyPage = () => {
 
   return (
     <div className="flex min-h-screen flex-col bg-brand-bg">
-      <LightSwitch />
-
       <header className="border-b border-brand-border bg-brand-bg">
-        <div className="page-shell page-shell-header py-5">
+        <div className="page-shell py-5 flex items-center justify-between gap-4">
           <Link
             to="/"
             aria-label="Back to home"
@@ -41,6 +39,7 @@ const AiJourneyPage = () => {
             />
             <BrandLockup />
           </Link>
+          <LightSwitch />
         </div>
       </header>
 

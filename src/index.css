@@ -129,14 +129,6 @@ body {
     padding-inline: var(--page-gutter);
   }
 
-  .page-shell-header {
-    padding-right: calc(var(--page-gutter) + 5rem);
-  }
-
-  .theme-switch {
-    right: var(--page-gutter);
-  }
-
   .home-layout {
     display: grid;
     grid-template-columns: minmax(0, 1fr);

@@ -13,10 +13,8 @@ const FaqPage = () => {
 
   return (
     <div className="min-h-screen bg-brand-bg flex flex-col">
-      <LightSwitch />
-
       <header className="bg-brand-bg border-b border-brand-border">
-        <div className="page-shell page-shell-header py-5">
+        <div className="page-shell py-5 flex items-center justify-between gap-4">
           <Link
             to="/"
             aria-label="Back to home"
@@ -28,6 +26,7 @@ const FaqPage = () => {
             />
             <BrandLockup />
           </Link>
+          <LightSwitch />
         </div>
       </header>
 

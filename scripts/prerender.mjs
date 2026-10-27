@@ -346,13 +346,13 @@ writePage("/projects", stampPage({
 
 // ---- homepage --------------------------------------------------------------
 //
-// The homepage's real copy lives in React components (Bio/About/Experience).
+// The homepage's real copy lives in React components (src/components/home/*).
 // This is a hand-kept factual summary so answer engines can describe who Jjay
 // is without executing JS. Keep it in sync if the bio/experience change.
 const homeInner = `
 <h1>Jaylord Vhan Fabor (Jjay Fabor)</h1>
-<p><strong>Software Engineer · AI Engineer</strong> — @JjayFabor — based in Iloilo City, Philippines.</p>
-<p>I'm a Software Engineer and AI Engineer who builds AI agents, developer tools, and workflow automation — software where AI does useful work inside real systems.</p>
+<p><strong>Software Engineer · AI Engineering &amp; Automation</strong> — @JjayFabor — based in Iloilo City, Philippines.</p>
+<p>I build AI agents, LLM-powered tools and workflow automation on reliable backends, with the Claude Agent SDK, MCP, Vertex AI and RAG, n8n and AI voice agents, plus Laravel, Python, TypeScript and PostgreSQL. I ship AI services to production and wire AI into CRM, booking and internal workflows.</p>
 <p>I build reliable backend applications, internal business tools, AI voice agents, self-hosted AI agents, and automated workflows that connect systems, APIs, and data. I care about maintainable, production-quality systems that solve real business problems.</p>
 <h2>Professional experience</h2>
 <p>My professional work includes HubSpot CRM development, custom workflows, API integrations connecting CRM data to an internal pipeline database, n8n business-process automation, and VAPI AI voice agents.</p>
@@ -365,16 +365,16 @@ const homeInner = `
 ${projectListItems}
 </ul>
 <h2>Contact</h2>
-<p><a href="https://github.com/JjayFabor" rel="me">GitHub</a> &middot; <a href="https://www.linkedin.com/in/jjayfabor/" rel="me">LinkedIn</a></p>
+<p><a href="https://github.com/JjayFabor" rel="me">GitHub</a> &middot; <a href="https://www.linkedin.com/in/jjayfabor/" rel="me">LinkedIn</a> &middot; <a href="https://v2.onlinejobs.ph/jobseekers/info/1555008" rel="me">OnlineJobs.ph</a> &middot; <a href="https://www.instagram.com/jjayfabor" rel="me">Instagram</a></p>
 `.trim();
 
 writePage("/", stampPage({
-  title: "Jjay Fabor — Software Engineer & AI Engineer",
+  title: "Jjay Fabor — Software Engineer, AI Engineering & Automation",
   description:
-    "Jaylord Vhan Fabor is a Software Engineer and AI Engineer in Iloilo, Philippines, building AI agents, developer tools, workflow automation, and reliable backends.",
+    "Jaylord Vhan Fabor is a Software Engineer in Iloilo, Philippines, building AI agents, LLM-powered tools and workflow automation on reliable backends with the Claude Agent SDK, MCP, Vertex AI, n8n, Laravel, Python and PostgreSQL.",
   canonical: "/",
   ogImage: "/logo-jf.png",
-  imageAlt: "Jaylord Vhan Fabor, Software Engineer and AI Engineer",
+  imageAlt: "Jaylord Vhan Fabor, Software Engineer — AI Engineering & Automation",
   ogImageWidth: 1026,
   ogImageHeight: 1026,
   twitterCard: "summary",
@@ -436,7 +436,7 @@ const sitemapUrls = [
     images: [
       {
         loc: `${SITE}/logo/profile.jpg`,
-        title: "Jaylord Vhan Fabor — Software Engineer and AI Engineer",
+        title: "Jaylord Vhan Fabor — Software Engineer, AI Engineering & Automation",
       },
     ],
   },

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { DarkModeContext } from '../context/ThemeContext.jsx';
 
+// Sits inside each page's header row (vertically centred with the brand).
 const LightSwitch = () => {
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
 
@@ -11,7 +12,7 @@ const LightSwitch = () => {
   return (
     <button
       onClick={handleClick}
-      className={`theme-switch fixed top-4 z-50 w-16 h-8 flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-brand-accent focus:ring-offset-2 focus:ring-offset-brand-bg
+      className={`relative shrink-0 w-16 h-8 flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-brand-accent focus:ring-offset-2 focus:ring-offset-brand-bg
                   ${darkMode ? 'bg-brand-accent' : 'bg-brand-border'}`}
       aria-label={darkMode ? "Activate light mode" : "Activate dark mode"}
       title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
